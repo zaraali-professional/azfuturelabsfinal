@@ -1,14 +1,15 @@
 .aboutus {
-  padding: 50px;
-  margin: 0; /* Remove margins to take full height */
+  padding: 50px 20px; /* Add horizontal padding for smaller screens */
+  margin-top: 100px; /* Add margin to separate it from the navbar or previous section */
   width: 100%; /* Full width */
-  height: 100vh; /* Full height of the screen */
+  min-height: 100vh; /* Minimum height for full-screen appearance */
   font-family: 'Roboto', sans-serif;
   transition: background-color 0.3s, color 0.3s;
   display: flex; /* Flexbox for centering content */
   flex-direction: column; /* Stack items vertically */
   justify-content: center; /* Vertically center content */
   align-items: center; /* Horizontally center content */
+  box-sizing: border-box; /* Include padding and borders in width/height */
 }
 
 /* Light Mode Styles */
@@ -18,13 +19,6 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Light Mode - Specific Heading and Paragraph Text Color */
-.aboutus.light .about-header h2,
-.aboutus.light .about-header p,
-.aboutus.light .card-content p {
-  color: #000; /* Ensure text color is black in light mode */
-}
-
 /* Dark Mode Styles */
 .aboutus.dark {
   background-color: #2d2d2d;
@@ -32,50 +26,38 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Dark Mode - Specific Heading and Paragraph Text Color */
-.aboutus.dark .about-header h2,
-.aboutus.dark .about-header p,
-.aboutus.dark .card-content p {
-  color: #f8f9fa; /* Ensure text color is white in dark mode */
-}
-
+/* About Header Styling */
 .about-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 50px; /* Reduced for smaller screens */
 }
 
 .about-header h2 {
-  font-size: 44px;
-  margin-bottom: 20px;
+  font-size: 36px; /* Adjust font size for all screen sizes */
+  margin-bottom: 15px;
   font-family: 'Poppins', sans-serif;
 }
 
 .about-header p {
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 16px; /* Smaller font for better readability */
+  line-height: 1.5;
   max-width: 900px;
   margin: 0 auto;
 }
 
+/* About Cards Styling */
 .about-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  /* Ensures a 2-column layout by default */
-  width: 100%; /* Make sure the cards take full width */
+  grid-template-columns: repeat(2, 1fr); /* Default to 2 columns */
+  gap: 20px; /* Adjust gap for medium and small screens */
+  width: 100%;
 }
 
 .about-card {
   border-radius: 15px;
   overflow: hidden;
-  /* Removed transition for hover effect */
-  position: relative; /* Ensures proper stacking context */
-  transition: border-color 0.3s; /* Keep only border-color transition */
-}
-
-/* Removed hover effect */
-.about-card:hover {
-  transform: none; /* Prevent card from popping out */
+  position: relative;
+  transition: border-color 0.3s; /* Smooth border color transitions */
 }
 
 /* Light Mode Card Styles */
@@ -92,33 +74,109 @@
   border-image: linear-gradient(45deg, rgb(88, 236, 171), rgb(245, 243, 245)) 1;
 }
 
+/* Card Content Styling */
 .card-content {
-  padding: 30px;
+  padding: 20px; /* Adjust padding for smaller screens */
 }
 
 .card-content h3 {
-  font-size: 26px;
-  margin-bottom: 15px;
+  font-size: 22px; /* Reduced size for better fit */
+  margin-bottom: 10px;
   font-family: 'Poppins', sans-serif;
 }
 
 .card-content p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: inherit; /* Inherit color from the parent */
+  font-size: 14px; /* Adjust font size */
+  line-height: 1.5;
+  color: inherit;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .about-cards {
-    grid-template-columns: 1fr; /* Switch to single column layout on small screens */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+  .aboutus {
+    padding: 40px 20px;
+    margin-top: 80px; /* Slightly reduce top margin */
   }
 
   .about-header h2 {
-    font-size: 36px;
+    font-size: 32px; /* Slightly smaller heading for medium screens */
+  }
+
+  .about-header p {
+    font-size: 16px;
+    max-width: 800px; /* Adjust width for tablets */
+  }
+
+  .about-cards {
+    grid-template-columns: repeat(1, 1fr); /* Single column layout */
   }
 
   .card-content h3 {
-    font-size: 22px;
+    font-size: 20px; /* Adjust font size for headings */
+  }
+
+  .card-content p {
+    font-size: 14px;
+  }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 768px) {
+  .aboutus {
+    padding: 30px 15px;
+    margin-top: 70px; /* Reduce spacing for smaller screens */
+  }
+
+  .about-header h2 {
+    font-size: 28px; /* Smaller heading size */
+  }
+
+  .about-header p {
+    font-size: 14px; /* Adjust paragraph font size */
+    max-width: 600px; /* Restrict width for better readability */
+  }
+
+  .about-cards {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 15px; /* Smaller gap between cards */
+  }
+
+  .card-content {
+    padding: 15px; /* Reduce padding inside cards */
+  }
+
+  .card-content h3 {
+    font-size: 18px; /* Adjust heading size */
+  }
+
+  .card-content p {
+    font-size: 12px; /* Adjust font size */
+  }
+}
+
+/* Extra Small Screens (Mobile Portrait) */
+@media (max-width: 480px) {
+  .aboutus {
+    padding: 20px 10px;
+    margin-top: 60px; /* Slightly reduce top margin */
+  }
+
+  .about-header h2 {
+    font-size: 24px; /* Smaller heading */
+  }
+
+  .about-header p {
+    font-size: 12px; /* Smaller paragraph size */
+    line-height: 1.4;
+  }
+
+  .card-content h3 {
+    font-size: 16px;
+  }
+
+  .card-content p {
+    font-size: 10px; /* Adjust for readability on tiny screens */
   }
 }
