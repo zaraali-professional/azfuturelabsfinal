@@ -1,14 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600&display=swap');
-
 .aboutus {
   padding: 50px;
-  background-color: #f8f9fa;
-  color: #2d2d2d;
-  margin: 40px auto;
-  max-width: 1200px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin: 0; /* Remove margins to take full height */
+  width: 100%; /* Full width */
+  height: 100vh; /* Full height of the screen */
   font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  display: flex; /* Flexbox for centering content */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Vertically center content */
+  align-items: center; /* Horizontally center content */
+}
+
+/* Light Mode Styles */
+.aboutus.light {
+  background-color: #f8f9fa;
+  color: #000; /* Set text color to black */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Light Mode - Specific Heading and Paragraph Text Color */
+.aboutus.light .about-header h2,
+.aboutus.light .about-header p,
+.aboutus.light .card-content p {
+  color: #000; /* Ensure text color is black in light mode */
+}
+
+/* Dark Mode Styles */
+.aboutus.dark {
+  background-color: #2d2d2d;
+  color: #f8f9fa;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Mode - Specific Heading and Paragraph Text Color */
+.aboutus.dark .about-header h2,
+.aboutus.dark .about-header p,
+.aboutus.dark .card-content p {
+  color: #f8f9fa; /* Ensure text color is white in dark mode */
 }
 
 .about-header {
@@ -19,34 +47,49 @@
 .about-header h2 {
   font-size: 44px;
   margin-bottom: 20px;
-  color: #333;
   font-family: 'Poppins', sans-serif;
 }
 
 .about-header p {
   font-size: 18px;
   line-height: 1.6;
-  color: #555;
   max-width: 900px;
   margin: 0 auto;
 }
 
 .about-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
+  /* Ensures a 2-column layout by default */
+  width: 100%; /* Make sure the cards take full width */
 }
 
 .about-card {
-  background: #fff;
   border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
   overflow: hidden;
+  /* Removed transition for hover effect */
+  position: relative; /* Ensures proper stacking context */
+  transition: border-color 0.3s; /* Keep only border-color transition */
 }
 
+/* Removed hover effect */
 .about-card:hover {
-  transform: translateY(-10px);
+  transform: none; /* Prevent card from popping out */
+}
+
+/* Light Mode Card Styles */
+.aboutus.light .about-card {
+  background: #fff;
+  border: 2px solid;
+  border-image: linear-gradient(45deg, cyan, purple) 1;
+}
+
+/* Dark Mode Card Styles */
+.aboutus.dark .about-card {
+  background: #1a1a1a;
+  border: 2px solid;
+  border-image: linear-gradient(45deg, rgb(88, 236, 171), rgb(245, 243, 245)) 1;
 }
 
 .card-content {
@@ -56,20 +99,19 @@
 .card-content h3 {
   font-size: 26px;
   margin-bottom: 15px;
-  color: #222;
   font-family: 'Poppins', sans-serif;
 }
 
 .card-content p {
   font-size: 16px;
   line-height: 1.6;
-  color: #555;
+  color: inherit; /* Inherit color from the parent */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .about-cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Switch to single column layout on small screens */
   }
 
   .about-header h2 {
@@ -80,4 +122,3 @@
     font-size: 22px;
   }
 }
-

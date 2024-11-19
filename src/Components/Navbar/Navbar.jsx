@@ -1,25 +1,9 @@
+import PropTypes from 'prop-types'; // Import PropTypes for validation
 import { Link as ScrollLink } from 'react-scroll';
 import './Navbar.css';
 import logo from '/src/assets/logo.jpeg';
-import { useState, useEffect } from 'react';
 
-const Navbar = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  // Check for saved theme preference on page load
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      setIsDarkMode(savedTheme === 'dark');
-    }
-  }, []);
-
-  // Toggle dark mode function
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    localStorage.setItem('theme', isDarkMode ? 'light' : 'dark');
-  };
-
+const Navbar = ({ isDarkMode, toggleDarkMode }) => {
   return (
     <nav className={`navbar ${isDarkMode ? 'dark-nav-sticky' : ''}`}>
       <div className="logo-container">
@@ -41,5 +25,10 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+// PropTypes validation
+Navbar.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired, // Validate that isDarkMode is a boolean
+  toggleDarkMode: PropTypes.func.isRequired, // Validate that toggleDarkMode is a function
+};
 
+export default Navbar;

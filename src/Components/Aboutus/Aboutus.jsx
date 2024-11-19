@@ -1,20 +1,21 @@
+import PropTypes from 'prop-types'; // Import PropTypes for validation
 import './Aboutus.css';
 
-const Aboutus = () => {
+const Aboutus = ({ isDarkMode }) => {
   return (
-    <section className='aboutus'>
-      <div className='about-header'>
+    <section className={`aboutus ${isDarkMode ? 'dark' : 'light'}`} id="aboutus">
+      <div className="about-header">
         <h2>About Us</h2>
         <p>
-          At Azfuturelabs, we are dedicated to empowering businesses with innovative AI solutions.
-          Our focus is on revolutionizing operational workflows, boosting efficiency, and 
-          enhancing user engagement through cutting-edge technology.
+          At Azfuturelabs, we are dedicated to empowering businesses with innovative AI solutions. 
+          Our focus is on revolutionizing operational workflows, boosting efficiency, and enhancing 
+          user engagement through cutting-edge technology.
         </p>
       </div>
 
-      <div className='about-cards'>
-        <div className='about-card'>
-          <div className='card-content'>
+      <div className="about-cards">
+        <div className="about-card">
+          <div className="card-content">
             <h3>Our Mission</h3>
             <p>
               We aim to design intelligent platforms that simplify complex processes, minimize 
@@ -23,18 +24,23 @@ const Aboutus = () => {
           </div>
         </div>
 
-        <div className='about-card'>
-          <div className='card-content'>
+        <div className="about-card">
+          <div className="card-content">
             <h3>Our Vision</h3>
             <p>
-              To lead the industry in AI-driven innovation, making powerful technology 
-              accessible, practical, and beneficial for organizations of every size and sector.
+              To lead the industry in AI-driven innovation, making powerful technology accessible, 
+              practical, and beneficial for organizations of every size and sector.
             </p>
           </div>
         </div>
       </div>
     </section>
   );
+};
+
+// PropTypes validation
+Aboutus.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired, // Validate that isDarkMode is a boolean
 };
 
 export default Aboutus;

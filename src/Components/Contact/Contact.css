@@ -2,16 +2,126 @@
 
 /* Contact Section Styling */
 .contact {
-  margin: 80px auto;
-  max-width: 1100px;
+  padding: 50px;
+  margin: 0; 
+  width: 100%; 
+  height: 100vh;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  background-color: #fafafa;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   padding: 40px;
   font-family: 'Roboto', sans-serif;
+  background-color: #fafafa; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  height: 100%; 
+}
+
+/* Dark Mode Styling */
+.contact.dark-mode {
+  background-color: #000000; /* Black background for dark mode */
+}
+
+.contact.dark-mode .contact-header,
+.contact.dark-mode .contact-us,
+.contact.dark-mode .get-in-touch {
+  color: #ffffff; /* White text for dark mode */
+}
+
+.contact.dark-mode .contact-col {
+  background-color: #2c2c2c; /* Dark background for contact column */
+  color: #ffffff; /* White text inside contact columns */
+  border: 4px solid transparent;
+  border-image: linear-gradient(to right, #00ff99, #ffffff); /* Green and white gradient border */
+  border-image-slice: 1;
+}
+
+.contact.dark-mode .contact-col h3 {
+  color: #ffffff; 
+}
+
+.contact.dark-mode .contact ul li {
+  color: #fffa00; /* Yellow contact info in dark mode */
+}
+
+.contact.dark-mode .contact form input,
+.contact.dark-mode .contact form textarea {
+  background: #1e1e1e; /* Dark background for inputs */
+  color: #ffffff; /* White text inside inputs */
+  border: 2px solid transparent;
+  background-image: linear-gradient(to right, #00ff99, #ffffff); /* Green and white gradient border */
+}
+
+.contact.dark-mode .contact form input:focus,
+.contact.dark-mode .contact form textarea:focus {
+  border-color: #00ff99; /* Green border on focus */
+  background-color: #333333; /* Slightly lighter background on focus */
+}
+
+.contact.dark-mode .contact form button {
+  background-color: #234b3d; /* Dark green for button */
+  color: #fff;
+}
+
+.contact.dark-mode .contact form button:hover {
+  background-color: #2d134a; /* Darker green on hover */
+}
+
+.contact.dark-mode .contact-col span {
+  color: #00ff99; /* Green text for result message */
+}
+
+/* Light Mode Styling */
+.contact.light-mode {
+  background-color: #fafafa; /* Light background for light mode */
+}
+
+.contact.light-mode .contact-header,
+.contact.light-mode .contact-us,
+.contact.light-mode .get-in-touch {
+  color: #0e162d; /* Dark text for light mode */
+}
+
+.contact.light-mode .contact-col {
+  background-color: #ffffff; /* White background for contact column */
+  color: #003366; /* Dark blue text for better readability in light mode */
+  border: 4px solid transparent;
+  border-image: linear-gradient(to right, #00ffff, #800080); /* Cyan and purple gradient border */
+  border-image-slice: 1;
+}
+
+.contact.light-mode .contact-col h3 {
+  color: #333333; /* Dark text for h3 */
+}
+
+.contact.light-mode .contact ul li {
+  color: #503383; /* Purple contact info in light mode */
+}
+
+.contact.light-mode .contact form input,
+.contact.light-mode .contact form textarea {
+  background: #f7f7f7; /* Light grey background for inputs */
+  color: #333333; /* Dark text inside inputs */
+  border: 2px solid transparent;
+  background-image: linear-gradient(to right, #00ffff, #800080); /* Cyan and purple gradient border */
+}
+
+.contact.light-mode .contact form input:focus,
+.contact.light-mode .contact form textarea:focus {
+  border-color: #00ffff; /* Cyan border on focus */
+  background-color: #ffffff; /* White background on focus */
+}
+
+.contact.light-mode .contact form button {
+  background-color: #234b3d; /* Green button for light mode */
+  color: #fff;
+}
+
+.contact.light-mode .contact form button:hover {
+  background-color: #2d134a; /* Darker green on hover */
+}
+
+.contact.light-mode .contact-col span {
+  color: #234b3d; /* Green text for result message */
 }
 
 /* Contact Header Styling */
@@ -19,22 +129,20 @@
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 36px;
   font-weight: 700;
-  color: #0e162d;
   margin-bottom: 20px;
   text-align: center;
   width: 100%;
 }
 
 .contact-us {
-  color: #234b3d;
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 5px;
+  width: 100%; /* Full width for "Contact Us" section */
 }
 
 .get-in-touch {
   text-align: center;
-  color: #5c5c5c;
   font-size: 24px;
   font-weight: 600;
   margin-top: 5px;
@@ -44,10 +152,8 @@
 /* Columns (Left and Right Card) */
 .contact-col {
   flex-basis: 45%;
-  color: #676767;
   margin-bottom: 40px;
   padding: 25px;
-  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -56,7 +162,6 @@
 }
 
 .contact-col h3 {
-  color: #333;
   font-weight: bold;
   font-size: 24px;
   display: flex;
@@ -70,7 +175,6 @@
 }
 
 .contact-col p {
-  color: #5c5c5c;
   margin-bottom: 20px;
   font-size: 16px;
   line-height: 1.7;
@@ -86,7 +190,6 @@
   display: flex;
   align-items: center;
   margin: 15px 0;
-  color: #503383; /* Purple for contact details */
   padding: 10px;
   border-bottom: 1px solid #ddd;
 }
@@ -101,7 +204,6 @@
 .contact form textarea {
   display: block;
   width: 100%;
-  background: #f7f7f7;
   padding: 15px;
   border: 1px solid #ddd;
   outline: 0;
@@ -112,15 +214,8 @@
   transition: all 0.3s ease;
 }
 
-.contact form input:focus,
-.contact form textarea:focus {
-  border-color: #234b3d; /* Green focus for inputs */
-  background-color: #fff;
-}
-
-/* Form Button Styling */
 .contact form button {
-  background-color: #234b3d; /* Strong green for button */
+  background-color: #234b3d;
   color: #fff;
   padding: 14px 25px;
   font-size: 18px;
@@ -129,11 +224,11 @@
   display: flex;
   align-items: center;
   transition: background-color 0.3s ease;
-  border-radius: 30px; /* More rounded button */
+  border-radius: 30px;
 }
 
 .contact form button:hover {
-  background-color: #2d134a; /* Darker green on hover */
+  background-color: #2d134a;
 }
 
 .contact form button img {
@@ -144,7 +239,6 @@
 .contact-col span {
   display: block;
   margin-top: 15px;
-  color: #234b3d;
   font-weight: bold;
   text-align: center;
 }
@@ -202,7 +296,6 @@
     font-size: 20px;
   }
 
-  /* Form Inputs and Button Adjustments for Small Screens */
   .contact form input,
   .contact form textarea {
     padding: 12px;

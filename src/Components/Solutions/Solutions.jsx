@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';  // Import PropTypes
 import './Solutions.css';
 import image1 from '../../assets/image-1.jpg';
 import image2 from '../../assets/image-voice.jpg';
@@ -6,9 +7,9 @@ import icon1 from '../../assets/icon-chatbot.png';
 import icon2 from '../../assets/icon-voice.png'; 
 import icon3 from '../../assets/icon-data.png'; 
 
-const Solutions = () => {
+const Solutions = ({ isDarkMode }) => {
   return (
-    <div className='solutions'>
+    <div className={`solutions ${isDarkMode ? 'dark' : 'light'}`}>
       <h2>Our Solutions</h2>
       <p>At Azfuturelabs, we focus on developing cutting-edge AI solutions that automate processes and provide seamless virtual assistance to meet the diverse needs of our clients. Our key areas of focus include:</p>
       
@@ -54,6 +55,11 @@ const Solutions = () => {
       </div>
     </div>
   );
+};
+
+// Prop validation for isDarkMode
+Solutions.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired,  // Validates that isDarkMode is a boolean and is required
 };
 
 export default Solutions;

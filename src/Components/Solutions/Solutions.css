@@ -8,11 +8,24 @@
     text-align: center;
 }
 
+/* Light Mode Styles */
+.solutions.light {
+    background: #ffffff; /* White background in light mode */
+    color: #000; /* Black text in light mode */
+}
+
+/* Dark Mode Styles */
+.solutions.dark {
+    background: #1a1a1a; /* Black background in dark mode */
+    color: #fff; /* White text in dark mode */
+}
+
+/* Heading and Paragraph Styles */
 h2 {
     font-size: 3rem;
     margin-bottom: 40px;
     font-family: 'Merriweather', serif;
-    color: #f8f9fa;
+    color: inherit; /* Color will depend on the mode */
     letter-spacing: 1.5px;
 }
 
@@ -20,7 +33,7 @@ p {
     max-width: 800px;
     margin: 0 auto 40px;
     line-height: 1.7;
-    color: #ffffff;
+    color: inherit; /* Color will depend on the mode */
 }
 
 /* Solutions content styling (use grid layout) */
@@ -29,6 +42,7 @@ p {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Auto-adjust columns based on screen size */
     gap: 30px;
     justify-items: center;
+    padding: 0 10px; /* Added padding for the grid */
 }
 
 /* Solution item styling (card layout) */
@@ -38,19 +52,31 @@ p {
     flex-direction: column;
     align-items: center;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     background: #ffffff;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease; /* Only box-shadow on hover */
     cursor: pointer;
     max-width: 350px;
     padding: 20px;
     text-align: center;
+    border: 2px solid transparent; /* Default transparent border */
+    background-color: inherit; /* Ensure background color is inherited */
 }
 
+/* Solution item hover styles */
 .solution-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+}
+
+/* Light Mode - Card Border Gradient */
+.solutions.light .solution-item {
+    border-image: linear-gradient(45deg, cyan, purple) 1; /* Cyan and Purple gradient border */
+}
+
+/* Dark Mode - Card Border Gradient */
+.solutions.dark .solution-item {
+    border-image: linear-gradient(45deg, green, white) 1; /* Green and White gradient border */
 }
 
 /* Image styling with gradient overlay */
@@ -72,9 +98,10 @@ p {
 }
 
 .image-container:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05); /* Slightly subtle zoom on hover */
 }
 
+/* Icon container styling */
 .icon-container {
     position: absolute;
     top: 50%;
@@ -99,13 +126,13 @@ p {
     font-size: 1.8rem;
     margin-bottom: 15px;
     font-family: 'Merriweather', serif;
-    color: #333333;
+    color: inherit; /* Color will depend on the mode */
 }
 
 .text-container p {
     font-size: 1rem;
     line-height: 1.6;
-    color: #555555;
+    color: inherit; /* Color will depend on the mode */
 }
 
 /* Responsive design for small screens */
@@ -124,7 +151,6 @@ p {
 
     .solutions-content {
         grid-template-columns: 1fr; /* Single column layout */
-        padding: 0 10px; /* Added padding on sides */
     }
 
     .solution-item {
