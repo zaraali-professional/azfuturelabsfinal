@@ -1,0 +1,28 @@
+/* Ensure the body takes full height */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.main-content {
+  flex: 1; /* This ensures the main content area takes up all available space */
+}
+
+.footer {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgb(24, 108, 80);
+  padding: 15px 0;
+  background: rgb(9, 9, 9);
+}
+
+.footer p {
+  color: rgb(236, 240, 240); /* Light text color */
+  font-size: 14px;
+  margin: 0;
+  text-align: center; /* Center the text in the footer */
+}
