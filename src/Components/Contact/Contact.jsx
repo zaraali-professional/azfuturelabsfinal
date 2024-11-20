@@ -51,7 +51,7 @@ const Contact = ({ isDarkMode }) => {
         </p>
         <ul>
           <li>
-            <img src={mail_icon} alt="Mail Icon" /> makali0812@yahoo.co.in, ziyaad6788@gmail.com
+            <img src={mail_icon} alt="Mail Icon" /> info@azfuturelabs.com
           </li>
           <li>
             <img src={phone_icon} alt="Phone Icon" /> 00966537302222, 00919849789368
