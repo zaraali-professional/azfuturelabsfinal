@@ -54,11 +54,10 @@ const Contact = ({ isDarkMode }) => {
             <img src={mail_icon} alt="Mail Icon" /> info@azfuturelabs.com
           </li>
           <li>
-            <img src={phone_icon} alt="Phone Icon" /> 00966537302222, 00919849789368
+            <img src={phone_icon} alt="Phone Icon" />  00919849789368
           </li>
           <li>
-            <img src={location_icon} alt="Location Icon" /> Heera nagar colony pillar no-208
-            Rajendranagar, HYDERABAD-500048 TELANGANA, INDIA
+            <img src={location_icon} alt="Location Icon" /> HYDERABAD-500048 TELANGANA, INDIA
           </li>
         </ul>
       </div>
